@@ -1,6 +1,8 @@
 const express = require('express');
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
+
 hbs.registerPartials(__dirname + '/views/partials')
 var app = express();
 app.set('view engine', 'hbs');
@@ -44,4 +46,4 @@ res.render('about', {
 });
 });
 
-app.listen(3000);
+app.listen(port);
