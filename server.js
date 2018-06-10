@@ -18,9 +18,10 @@ app.use( (req, res, next) => {
 });
 
 
-app.use ( (req, resp, next) => {
-    resp.render('maintenance');
-    });
+// app.use ( (req, resp, next) => {
+//     resp.render('maintenance');
+//     });
+
 hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
 });
@@ -45,5 +46,12 @@ res.render('about', {
     currentYear : new Date().getFullYear()
 });
 });
+
+app.get('/projects',(req,res)=>{
+    res.render('projects', {
+        pageTitle : 'Projects page',
+        currentYear : new Date().getFullYear()
+    });
+    });
 
 app.listen(port);
